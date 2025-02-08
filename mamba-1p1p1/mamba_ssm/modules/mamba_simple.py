@@ -397,7 +397,7 @@ class Mamba(nn.Module):
                 )
             else:
                 out = F.linear(
-                    rearrange(out + out_b.flip([-1]), "b d l -> b l d") / 2,
+                    (rearrange(out + out_b.flip([-1]), "b d l -> b l d") / 2) * F.silu(rearrange(z, "b d l -> b l d")),
                     self.out_proj.weight,
                     self.out_proj.bias,
                 )
