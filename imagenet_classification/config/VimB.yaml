@@ -20,7 +20,7 @@ warmup_epochs: 5
 num_classes: 1000
 
 vim_config:
-  _target_: models.fastvim.vim_base_patch16_224_final_pool_mean_abs_pos_embed_with_midclstok_div2
+  _target_: models.vim.vim_base_patch16_224_final_pool_mean_abs_pos_embed_with_midclstok_div2
   pretrained: false
   num_classes: ${num_classes}
   drop_path_rate: ${drop_path_rate}
